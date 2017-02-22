@@ -19,16 +19,14 @@ class TopSongViewController: UIViewController {
     let dissposeBag = DisposeBag()
     let list = Variable<[Song]>([])
     
+    @IBOutlet weak var ds: UIImageView!
     @IBOutlet weak var buttonImage: UIButton!
     @IBOutlet weak var genre: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let number = delegate.getGenreNumber()
         let myGenre = delegate.getGenre()
-       
-        if let image = UIImage(named: "genre-\(number)") {
-            buttonImage.setImage(image, for: .normal)
-        }
+        ds.image = UIImage(named: "gener-\(number)")
         //genre.frame = CGRect(origin: CGPoint(x: 150, y: 20), size: genre.frame.size)
         genre.text = myGenre
         Alamofire.request("https://itunes.apple.com/us/rss/topsongs/limit=50/genre=\(number)/explicit=true/json").responseJSON{(response) in
