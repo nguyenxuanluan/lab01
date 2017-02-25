@@ -25,7 +25,7 @@ class DiscoverViewController: UIViewController,UICollectionViewDelegate {
         super.viewDidLoad()
         collectionView.delegate = self
         getData()
-
+        
         
 
         // Do any additional setup after loading the view.
@@ -33,7 +33,7 @@ class DiscoverViewController: UIViewController,UICollectionViewDelegate {
     @IBAction func touchSlideButton(_ sender: Any) {
         print("ABC")
     }
-  
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let selectedRow = collectionView.indexPathsForSelectedItems![0].row

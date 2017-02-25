@@ -15,11 +15,7 @@ class TopSongTableViewCell: UITableViewCell {
     @IBOutlet weak var imageSongView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageSongView.layer.borderWidth = 1
-        imageSongView.layer.masksToBounds = false
-        imageSongView.layer.borderColor = UIColor.black.cgColor
-        imageSongView.layer.cornerRadius = imageSongView.frame.height/2
-        imageSongView.clipsToBounds = true
+        
         
         // Initialization code
     }
@@ -33,6 +29,7 @@ class TopSongTableViewCell: UITableViewCell {
         self.imageSongView.downloadedFrom(link: song.imageName)
         self.title.text = song.name
         self.subTitle.text = song.artist
+        
     }
 
 }
